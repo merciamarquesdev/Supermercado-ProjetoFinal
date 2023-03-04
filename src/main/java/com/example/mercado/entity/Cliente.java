@@ -14,5 +14,4 @@ public class Cliente {
     private String idCliente;
     private String cpfCliente;
     private String nomeCliente;
-
 }

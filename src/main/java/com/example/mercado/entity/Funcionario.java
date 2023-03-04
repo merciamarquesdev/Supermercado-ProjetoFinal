@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "Funcionario")
-public class Funcionario{
+public class Funcionario {
     @Id
     private String idFuncionario;
     private String cpfFuncionario;

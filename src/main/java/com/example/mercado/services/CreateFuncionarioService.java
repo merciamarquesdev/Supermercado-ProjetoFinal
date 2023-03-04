@@ -1,11 +1,13 @@
 package com.example.mercado.services;
 
+import com.example.mercado.entity.Cliente;
 import com.example.mercado.entity.Funcionario;
 import com.example.mercado.repositories.FuncionarioRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -17,5 +19,9 @@ public class CreateFuncionarioService {
         funcionario.setIdFuncionario(UUID.randomUUID().toString());
         log.info("Funcionario de ID {}", funcionario.getIdFuncionario());
         return funcionarioRepository.findById(funcionario.getIdFuncionario()).orElse(funcionarioRepository.save(funcionario));
+    }
+    public Optional<Funcionario> getById(String id) {
+        var funcionario = funcionarioRepository.findById(id);
+        return funcionario;
     }
 }
