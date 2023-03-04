@@ -10,10 +10,12 @@ import java.time.LocalDate;
 @Table(name="Produto")
 public class Produto {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String idProduto;
     private String nome;
+    private String marca;
+    private Integer quantidade;
     private LocalDate dataDeValidade;
-    private Double precoDeCompra;
     private Double precoDeVenda;
     @ManyToOne
     @JoinColumn(name = "fornecedor_id_fornecedor")
