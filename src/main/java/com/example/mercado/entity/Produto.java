@@ -14,7 +14,6 @@ public class Produto {
     private String idProduto;
     private String nome;
     private String marca;
-    private Integer quantidade;
     private LocalDate dataDeValidade;
     private Double precoDeVenda;
     @ManyToOne
