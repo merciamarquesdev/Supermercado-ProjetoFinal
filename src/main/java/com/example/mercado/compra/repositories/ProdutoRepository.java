@@ -1,7 +1,6 @@
-package com.example.mercado.repositories;
+package com.example.mercado.compra.repositories;
 
-import com.example.mercado.entity.Cliente;
-import com.example.mercado.entity.Produto;
+import com.example.mercado.compra.entity.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

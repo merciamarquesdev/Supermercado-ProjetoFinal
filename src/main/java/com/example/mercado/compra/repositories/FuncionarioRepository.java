@@ -1,6 +1,6 @@
-package com.example.mercado.repositories;
+package com.example.mercado.compra.repositories;
 
-import com.example.mercado.entity.Funcionario;
+import com.example.mercado.compra.entity.Funcionario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
