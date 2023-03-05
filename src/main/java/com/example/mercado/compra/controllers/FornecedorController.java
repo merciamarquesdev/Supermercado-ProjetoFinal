@@ -1,7 +1,7 @@
-package com.example.mercado.controllers;
+package com.example.mercado.compra.controllers;
 
-import com.example.mercado.entity.Fornecedor;
-import com.example.mercado.services.CreateFornecedorService;
+import com.example.mercado.compra.entity.Fornecedor;
+import com.example.mercado.compra.services.CreateFornecedorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
-package com.example.mercado.services;
+package com.example.mercado.compra.services;
 
-import com.example.mercado.entity.Fornecedor;
-import com.example.mercado.repositories.FornecedorRepository;
+import com.example.mercado.compra.entity.Fornecedor;
+import com.example.mercado.compra.repositories.FornecedorRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

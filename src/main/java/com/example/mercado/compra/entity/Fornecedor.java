@@ -1,4 +1,4 @@
-package com.example.mercado.entity;
+package com.example.mercado.compra.entity;
 
 import jdk.jfr.Enabled;
 import lombok.Data;

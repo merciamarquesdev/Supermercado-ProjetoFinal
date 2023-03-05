@@ -1,6 +1,6 @@
-package com.example.mercado.repositories;
+package com.example.mercado.compra.repositories;
 
-import com.example.mercado.entity.Cliente;
+import com.example.mercado.compra.entity.Cliente;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, String> {
