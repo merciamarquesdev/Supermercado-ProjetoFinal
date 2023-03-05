@@ -14,11 +14,14 @@ public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long idCompra;
-    @CreatedDate
-    private LocalDateTime dataCompra;
     @ManyToOne
     @JoinColumn(name = "id_funcionario")
     private Funcionario funcionario;
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+    @CreatedDate
+    private LocalDateTime dataCompra;
     @OneToMany(mappedBy = "idProduto")
     private List<Produto> produtosCompradosList;
 }

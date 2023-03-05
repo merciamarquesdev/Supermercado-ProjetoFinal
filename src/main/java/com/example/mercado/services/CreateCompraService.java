@@ -15,11 +15,11 @@ import java.util.List;
 @Slf4j
 public class CreateCompraService {
     private final CompraRepository compraRepository;
-    private final ProdutoRepository produtoRepository;
 
     public Compra execute(Compra compra, List<Produto> produtos){
-        Compra savedCompra= compraRepository.save(compra);
+        Compra savedCompra = compraRepository.save(compra);
         produtos.forEach(produto -> produto.setIdProduto(produto.getIdProduto()));
+        produtos.forEach(produto -> produto.setQuantidade(produto.getQuantidade() -1));
         savedCompra.setProdutosCompradosList(produtos);
         return savedCompra;
     }
