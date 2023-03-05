@@ -13,7 +13,7 @@ import java.util.List;
 public class Compra {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long idCompra;
+    private String idCompra;
     @CreatedDate
     private LocalDateTime dataCompra;
     @ManyToOne
