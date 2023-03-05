@@ -1,0 +1,40 @@
+{
+    "type": "record",
+    "name": "Compra",
+    "namespace": "br.com.springkafka",
+    "fields":[
+        {
+            "name": "idCompra",
+            "type": "string"
+        },
+        {
+            "name": "funcionario",
+            "type": {
+                "type": "record",
+                "name": "Funcionario",
+                "fields" : [
+                    {"name": "idFuncionario",
+                     "type": "string"
+                    }]
+            }
+        },
+        {
+            "name": "cliente",
+            "type": {
+                "type": "record",
+                "name": "Cliente",
+                "fields" : [
+                    {"name": "idCliente",
+                    "type": "string"
+                    }]
+            }
+        },
+        {
+            "name": "produtosCompradosList",
+            "type": {
+                "type": "array",
+                "items": "string"
+                }
+        }
+    ]
+}
