@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -17,5 +18,10 @@ public class CreateFornecedorService {
         fornecedor.setIdFornecedor(UUID.randomUUID().toString());
         log.info("Fornecedor de ID{}", fornecedor.getIdFornecedor());
         return fornecedorRepository.findById(fornecedor.getIdFornecedor()).orElse(fornecedorRepository.save(fornecedor));
+    }
+
+    public Optional<Fornecedor> getById(String id) {
+        var fornecedor = fornecedorRepository.findById(id);
+        return fornecedor;
     }
 }

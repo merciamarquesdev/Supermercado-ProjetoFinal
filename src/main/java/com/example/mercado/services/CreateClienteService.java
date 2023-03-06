@@ -1,12 +1,14 @@
 package com.example.mercado.services;
 
 import com.example.mercado.entity.Cliente;
+import com.example.mercado.entity.Fornecedor;
 import com.example.mercado.repositories.ClienteRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import lombok.var;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -18,5 +20,10 @@ public class CreateClienteService {
         cliente.setIdCliente(UUID.randomUUID().toString());
         log.info("Cliente de ID{}", cliente.getIdCliente());
         return clienteRepository.findById(cliente.getIdCliente()).orElse(clienteRepository.save(cliente));
+    }
+
+    public Optional<Cliente> getById(String id) {
+        var cliente = clienteRepository.findById(id);
+        return cliente;
     }
 }

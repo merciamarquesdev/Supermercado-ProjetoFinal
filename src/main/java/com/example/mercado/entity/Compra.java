@@ -24,6 +24,7 @@ public class Compra {
     @JoinColumn(name = "id_funcionario")
     private Funcionario funcionario;
     @ManyToOne
+    @JoinColumn(name = "id_cliente")
     private Cliente cliente;
     @OneToMany(mappedBy = "idProduto")
     private List<Produto> produtosCompradosList;
