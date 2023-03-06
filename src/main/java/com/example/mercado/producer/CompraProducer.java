@@ -1,10 +1,7 @@
 
-
 package com.example.mercado.producer;
 
-
-import com.example.mercado.configuration.CompraDTO;
-import com.example.mercado.configuration.RealizaCompra;
+import com.ada.mercado.Compra;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -14,16 +11,19 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class CompraProducer {
     private final String topicName;
-    private final KafkaTemplate<Object, CompraDTO> kafkaTemplate;
+    private final KafkaTemplate<String, Compra> kafkaTemplate;
 
-    public CompraProducer(@Value("${topic.name}") String topicName, KafkaTemplate<Object, CompraDTO> kafkaTemplate) {
+
+    public CompraProducer(@Value("${topic.name}")String topicName, KafkaTemplate<String, Compra> kafkaTemplate) {
         this.topicName = topicName;
         this.kafkaTemplate = kafkaTemplate;
     }
 
-    public void send(CompraDTO compraDTO){
-        log.info("Mensagem enviada pelo kafka {}", compraDTO);
-        kafkaTemplate.send(topicName,compraDTO);
+    public void sendMessage(Compra compra){
+        kafkaTemplate.send(topicName, compra).addCallback(
+                sucess -> log.info("Mensagem enviada com sucesso!"),
+                failure -> log.error("Falha ao Enviar Menssagem!")
+        );
     }
 }
 

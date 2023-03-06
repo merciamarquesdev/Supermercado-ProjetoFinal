@@ -2,6 +2,8 @@ package com.example.mercado.entity;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.glassfish.jersey.spi.Contract;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
 
@@ -11,7 +13,6 @@ import java.util.List;
 
 @Data
 @Entity
-@Builder
 @Table(name="Compra")
 public class Compra {
     @Id
@@ -26,6 +27,6 @@ public class Compra {
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
-    @OneToMany(mappedBy = "idProduto")
+    @OneToMany(mappedBy = "nome")
     private List<Produto> produtosCompradosList;
 }

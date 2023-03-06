@@ -1,7 +1,7 @@
 {
     "type": "record",
     "name": "Compra",
-    "namespace": "br.com.springkafka",
+    "namespace": "com.ada.mercado",
     "fields":[
         {
             "name": "idCompra",
