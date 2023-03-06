@@ -1,6 +1,5 @@
 package com.example.mercado.compra.entity;
 
-import jdk.jfr.Enabled;
 import lombok.Data;
 
 import javax.persistence.Entity;

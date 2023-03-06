@@ -4,7 +4,9 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 @Data
 @Entity
@@ -14,4 +16,7 @@ public class Cliente {
     private String idCliente;
     private String cpfCliente;
     private String nomeCliente;
+    @OneToMany(mappedBy = "idCompra")
+    private List<Compra> compras;
+
 }

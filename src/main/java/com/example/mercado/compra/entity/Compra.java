@@ -1,6 +1,10 @@
 package com.example.mercado.compra.entity;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.glassfish.jersey.spi.Contract;
+import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
@@ -12,16 +16,17 @@ import java.util.List;
 @Table(name="Compra")
 public class Compra {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long idCompra;
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    private String idCompra;
+    @CreatedDate
+    private LocalDateTime dataCompra;
     @ManyToOne
     @JoinColumn(name = "id_funcionario")
     private Funcionario funcionario;
     @ManyToOne
     @JoinColumn(name = "id_cliente")
     private Cliente cliente;
-    @CreatedDate
-    private LocalDateTime dataCompra;
-    @OneToMany(mappedBy = "idProduto")
+    @OneToMany(mappedBy = "nome")
     private List<Produto> produtosCompradosList;
 }
