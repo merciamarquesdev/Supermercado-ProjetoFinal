@@ -1,8 +1,6 @@
 package com.example.mercado.entity;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.glassfish.jersey.spi.Contract;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.CreatedDate;
@@ -11,7 +9,11 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name="Compra")
 public class Compra {
@@ -22,6 +24,6 @@ public class Compra {
     @CreatedDate
     private LocalDateTime dataCompra;
     private String cpf;
-    @OneToMany(mappedBy = "nome")
+    @OneToMany(mappedBy = "nome", cascade = CascadeType.ALL)
     private List<Produto> produtosCompradosList;
 }

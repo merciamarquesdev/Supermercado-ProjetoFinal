@@ -1,11 +1,15 @@
 package com.example.mercado.entity;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 
-@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name="Produto")
 public class Produto {
