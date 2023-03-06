@@ -8,27 +8,10 @@
             "type": "string"
         },
         {
-            "name": "funcionario",
-            "type": {
-                "type": "record",
-                "name": "Funcionario",
-                "fields" : [
-                    {"name": "idFuncionario",
-                     "type": "string"
-                    }]
-            }
+            "name": "cpf",
+            "type": "string"
         },
-        {
-            "name": "cliente",
-            "type": {
-                "type": "record",
-                "name": "Cliente",
-                "fields" : [
-                    {"name": "idCliente",
-                    "type": "string"
-                    }]
-            }
-        },
+
         {
             "name": "produtosCompradosList",
             "type": {

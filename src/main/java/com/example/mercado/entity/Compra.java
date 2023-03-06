@@ -21,12 +21,7 @@ public class Compra {
     private String idCompra;
     @CreatedDate
     private LocalDateTime dataCompra;
-    @ManyToOne
-    @JoinColumn(name = "id_funcionario")
-    private Funcionario funcionario;
-    @ManyToOne
-    @JoinColumn(name = "id_cliente")
-    private Cliente cliente;
+    private String cpf;
     @OneToMany(mappedBy = "nome")
     private List<Produto> produtosCompradosList;
 }
