@@ -1,0 +1,24 @@
+{
+    "type": "record",
+    "name": "Produto",
+    "namespace": "com.ada.mercado",
+    "fields":[
+        {
+            "name": "idProduto",
+            "type": "string"
+        },
+        {
+            "name": "nome",
+            "type": "string"
+        },
+	{
+            "name": "quantidade",
+            "type": "int"
+        },
+	{
+            "name": "Preco",
+            "type": "double"
+        }
+]
+   
+}
