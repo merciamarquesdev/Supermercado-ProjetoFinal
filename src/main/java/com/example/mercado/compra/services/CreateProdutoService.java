@@ -4,6 +4,7 @@ import com.example.mercado.compra.entity.Produto;
 import com.example.mercado.compra.repositories.ProdutoRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import lombok.var;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
