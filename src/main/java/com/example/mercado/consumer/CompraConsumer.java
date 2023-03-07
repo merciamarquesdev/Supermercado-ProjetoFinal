@@ -2,6 +2,7 @@ package com.example.mercado.consumer;
 
 import com.ada.mercado.Compra;
 import com.example.mercado.entity.Produto;
+import com.example.mercado.repositories.CompraRepository;
 import com.example.mercado.repositories.ProdutoRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class CompraConsumer {
     private final ProdutoRepository produtoRepository;
+    private final CompraRepository compraRepository;
 
     @KafkaListener(topics = "${topic.name}")
     public void consumer(ConsumerRecord<String, Compra> record, Acknowledgment ack) {
@@ -33,7 +35,7 @@ public class CompraConsumer {
                         .findByNome(p.toString())
                         .ifPresent(produto -> compraEntity.getProdutosCompradosList()
                                 .add(produto)));
-
+        compraRepository.save(compraEntity);
         ack.acknowledge();
     }
 }

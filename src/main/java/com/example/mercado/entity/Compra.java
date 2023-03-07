@@ -24,6 +24,6 @@ public class Compra {
     @CreatedDate
     private LocalDateTime dataCompra;
     private String cpf;
-    @OneToMany(mappedBy = "nome", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "nome")
     private List<Produto> produtosCompradosList;
 }
